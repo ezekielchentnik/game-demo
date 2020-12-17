@@ -1,6 +1,7 @@
 {
     "scripts": {
-      "start": "http-server public -c3600 -g -b"
+      "start": "http-server public -c3600 -g -b",
+      "yolo": "git add . && git commit -m \"$(curl -s api.kanye.rest/?format=text)\" && git push"
     },
     "dependencies": {
       "http-server": "^0.12.3"

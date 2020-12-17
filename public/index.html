@@ -1,110 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" onclick="jump()">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Womp</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        .game {
-            width: 500px;
-            height: 200px;
-            border: 1px solid black;
-            margin: auto;
-        }
-
-        #character {
-            width: 20px;
-            height: 50px;
-            background-color: magenta;
-            position: relative;
-            top: 150px;
-        }
-
-        .animate {
-            animation: jump 0.3s linear;
-        }
-
-        @keyframes jump {
-            0% {
-                top: 150px;
-            }
-
-            30% {
-                top: 100px;
-            }
-
-            70% {
-                top: 100px;
-            }
-
-            100% {
-                top: 150px;
-            }
-        }
-
-        #block {
-            background-color: black;
-            width: 20px;
-            height: 20px;
-            position: relative;
-            top: 130px;
-            left: 500px;
-            animation: block 1s infinite linear;
-        }
-
-        @keyframes block {
-            0% {
-                left: 500px
-            }
-
-            100% {
-                left: -20px
-            }
-        }
-
-        p {
-            text-align: center;
-        }
-    </style>
+    <style></style>
 </head>
-
 <body>
-    <div class="game">
-        <div id="character"></div>
-        <div id="block"></div>
-    </div>
-    <p>Score: <span id="score"></span></p>
 </body>
-<script>
-    const character = document.getElementById("character");
-    const block = document.getElementById("block");
-    let counter = 0;
-    const jump = () => {
-        if (character.classList == "animate") { return; }
-        character.classList.add("animate");
-        setTimeout(function () {
-            character.classList.remove("animate");
-        }, 300);
-    }
-    setInterval(() => {
-        const characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-        const blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-        if (blockLeft < 20 && blockLeft > -20 && characterTop >= 130) {
-            block.style.animation = "none";
-            alert("Game Over. score: " + Math.floor(counter / 100));
-            counter = 0;
-            block.style.animation = "block 2s infinite linear";
-        } else {
-            counter++;
-            document.getElementById("score").innerHTML = Math.floor(counter / 100);
-        }
-    }, 10);
-</script>
-
+<script></script>
 </html>
